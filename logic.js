@@ -43,7 +43,26 @@ function addClearButtonEventListener() {
     });
 }
 
+/* Deletes grid */
+function deleteGrid() {
+    let grid = document.querySelector('.grid');
+    grid.remove();
+}
+
+function addNewGridButtonEventListener() {
+    let newGridButton = document.querySelector('.new-grid');
+    newGridButton.addEventListener('click', () => {
+        console.log('hi');
+        let rows = prompt("How many rows?");
+        let cols = prompt("How many columns?");
+        deleteGrid();
+        createGrid(rows, cols);
+        addSquareEventListeners();
+    });
+}
+
 /* Run functions */
-createGrid(64,64);
+createGrid(16,16);
 addSquareEventListeners();
 addClearButtonEventListener();
+addNewGridButtonEventListener();
