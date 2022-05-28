@@ -27,5 +27,23 @@ function addSquareEventListeners() {
     });
 }
 
-createGrid(16,16);
+/* Clears the board */
+function clearGrid() {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.style['background-color'] = "black";
+    });
+}
+
+function addClearButtonEventListener() {
+    let clearButton = document.querySelector('.clear');
+    console.log(clearButton);
+    clearButton.addEventListener('click', () => {
+        clearGrid();
+    });
+}
+
+/* Run functions */
+createGrid(64,64);
 addSquareEventListeners();
+addClearButtonEventListener();
