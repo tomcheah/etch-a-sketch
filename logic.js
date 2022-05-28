@@ -17,17 +17,15 @@ function createGrid(rows, cols) {
     body.appendChild(grid);
 }
 
-/*
-    <div class="container">
-        <div class="grid">
-            <div class="row-1">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-            <div class="row-x"></div>
-        </div>
-    </div>
-*/
+/* Add event listeners to .square divs */
+function addSquareEventListeners() {
+    let squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+    square.addEventListener('mouseenter', () => {
+            square.style['background-color'] = "blue";
+        })
+    });
+}
 
-createGrid(5,5);
+createGrid(16,16);
+addSquareEventListeners();
